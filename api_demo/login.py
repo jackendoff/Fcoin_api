@@ -17,6 +17,8 @@ class FcoinAuth(object):
         '''
         pass
 
+
+
     def request_data(self):
         '''
         使用签名和api—key发送请求
