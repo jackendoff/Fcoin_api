@@ -111,5 +111,5 @@ class PublicApi(object):
 if __name__ == '__main__':
     coin_name = 'dageth'
     coin = PublicApi(coin_name)
-    data = coin.get_k_line()
+    data = coin.get_server_time()
     print(data,type(data))

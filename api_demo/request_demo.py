@@ -4,6 +4,7 @@ import json
 请求url，获取数据，返回数据类型
 '''
 
+
 def get_data(url):
     data_re = requests.get(url)
     data = json.loads(data_re.content.decode())
