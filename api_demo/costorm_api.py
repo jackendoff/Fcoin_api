@@ -1,5 +1,4 @@
 from request_demo import get_data
-from constant_data import constant_dict
 
 
 class CustomerApi(object):
@@ -10,7 +9,7 @@ class CustomerApi(object):
         url = 'GET https://api.fcoin.com/v2/accounts/balance'
         data = get_data(url)
         return data
-    
+
 
 if __name__ == '__main__':
     customer = CustomerApi()
