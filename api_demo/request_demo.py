@@ -5,10 +5,17 @@ import json
 '''
 
 
-def get_data(url):
-    data_re = requests.get(url)
+def get_data(url,**kwargs):
+    if kwargs is None:
+        data_re = requests.get(url)
+        data = json.loads(data_re.content.decode())
+        return data
+    # print(kwargs)
+    data_re = requests.get(url,headers=kwargs)
     data = json.loads(data_re.content.decode())
     return data
+def post_data(url,**kwargs):
+    pass
 
 
 if __name__ == '__main__':
