@@ -14,8 +14,17 @@ def get_data(url,**kwargs):
     data_re = requests.get(url,headers=kwargs)
     data = json.loads(data_re.content.decode())
     return data
+
+
 def post_data(url,**kwargs):
-    pass
+    if kwargs is None:
+        data_re = requests.get(url)
+        data = json.loads(data_re.content.decode())
+        return data
+    # print(kwargs)
+    data_re = requests.post(url,headers=kwargs)
+    data = json.loads(data_re.content.decode())
+    return data
 
 
 if __name__ == '__main__':

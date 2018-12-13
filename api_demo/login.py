@@ -47,7 +47,7 @@ class FcoinAuth(object):
         elif self.HTTP_METHOD == 'POST':
             # self.HTTP_REQUEST_URI += FcoinAuth.sort_dict_to_str(**kwargs)
             # 拼接字符串
-            join_str = self.HTTP_METHOD+self.HTTP_REQUEST_URI+self.TIMESTAMP+FcoinAuth.sort_dict_to_str(**kwargs)
+            join_str = self.HTTP_METHOD+self.HTTP_REQUEST_URI+self.TIMESTAMP+self.sort_dict_to_str(**kwargs)
             print(join_str)
 
             # 生成加密
@@ -104,7 +104,7 @@ if __name__ == '__main__':
         'limit':20
     }
     nowtime = str(round(time.time() * 1000))
-    auth = FcoinAuth(constant_dict['KEY'],constant_dict['SECRET KEY'],'GET','https://api.fcoin.com/v2/orders',nowtime,POST_BODY=None)
+    auth = FcoinAuth(constant_dict['KEY'],constant_dict['SECRET KEY'],'POST','https://api.fcoin.com/v2/orders',nowtime,POST_BODY=None)
     # 需要传入参数**kwargs
     signature = auth.get_signature(**kwargs)
     print(signature)
